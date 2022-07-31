@@ -4,4 +4,7 @@
 - openvino
 - tensorrt
 - onnxruntime
-语言的版本为C++/Python 分别实现一版,立下Flag,然后利用这个Repo去找工作
+## TensorRT
+FP-16 load image 16.32ms
+FP-16 nms 48.32ms
+FP-16 inference 5ms
