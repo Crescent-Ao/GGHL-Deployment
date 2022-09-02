@@ -1,8 +1,8 @@
 # GGHL-Deployment
 初步计划实现对以下平台的推理，分别是
-- NCNN(不带有解码头的权重存在一些问题)
-- openvino
-- tensorrt(INT8 未完成)
+- NCNN(完成）
+- openvino（无AVX512）
+- tensorrt（实现）
 - onnxruntime(python API)
 ## TensorRT
 - FP-16 load image 16.32ms
