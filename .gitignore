@@ -382,7 +382,6 @@ n
 *.json
 .engine
 .trt
-QAQ*.png
 GGHL
 *.cmake
 Make*
