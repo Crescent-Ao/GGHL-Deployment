@@ -1,0 +1,312 @@
+7767517
+310 309
+pnnx.Input               pnnx_input_0             0 1 0 #0=(1,3,800,800)f32
+nn.Conv2d                convbn2d_0               1 1 0 1 bias=True dilation=(1,1) groups=1 in_channels=3 kernel_size=(3,3) out_channels=32 padding=(1,1) padding_mode=zeros stride=(1,1) @bias=(32)f32 @weight=(32,3,3,3)f32 $input=0 #0=(1,3,800,800)f32 #1=(1,32,800,800)f32
+nn.LeakyReLU             _GGHL__backnone._Darknet53__conv._Convolutional__activate 1 1 1 2 negative_slope=1.000000e-01 #1=(1,32,800,800)f32 #2=(1,32,800,800)f32
+nn.Conv2d                convbn2d_1               1 1 2 3 bias=True dilation=(1,1) groups=1 in_channels=32 kernel_size=(3,3) out_channels=64 padding=(1,1) padding_mode=zeros stride=(2,2) @bias=(64)f32 @weight=(64,32,3,3)f32 $input=2 #2=(1,32,800,800)f32 #3=(1,64,400,400)f32
+nn.LeakyReLU             _GGHL__backnone._Darknet53__conv_5_0._Convolutional__activate 1 1 3 4 negative_slope=1.000000e-01 #3=(1,64,400,400)f32 #4=(1,64,400,400)f32
+nn.Conv2d                convbn2d_2               1 1 4 5 bias=True dilation=(1,1) groups=1 in_channels=64 kernel_size=(1,1) out_channels=32 padding=(0,0) padding_mode=zeros stride=(1,1) @bias=(32)f32 @weight=(32,64,1,1)f32 $input=4 #4=(1,64,400,400)f32 #5=(1,32,400,400)f32
+nn.LeakyReLU             _GGHL__backnone._Darknet53__rb_5_0._Residual_block__conv1._Convolutional__activate 1 1 5 6 negative_slope=1.000000e-01 #5=(1,32,400,400)f32 #6=(1,32,400,400)f32
+nn.Conv2d                convbn2d_3               1 1 6 7 bias=True dilation=(1,1) groups=1 in_channels=32 kernel_size=(3,3) out_channels=64 padding=(1,1) padding_mode=zeros stride=(1,1) @bias=(64)f32 @weight=(64,32,3,3)f32 $input=6 #6=(1,32,400,400)f32 #7=(1,64,400,400)f32
+nn.LeakyReLU             _GGHL__backnone._Darknet53__rb_5_0._Residual_block__conv2._Convolutional__activate 1 1 7 8 negative_slope=1.000000e-01 #7=(1,64,400,400)f32 #8=(1,64,400,400)f32
+pnnx.Expression          pnnx_expr_1448           2 1 4 8 9 expr=add(@0,@1) #4=(1,64,400,400)f32 #8=(1,64,400,400)f32 #9=(1,64,400,400)f32
+nn.Conv2d                convbn2d_4               1 1 9 10 bias=True dilation=(1,1) groups=1 in_channels=64 kernel_size=(3,3) out_channels=128 padding=(1,1) padding_mode=zeros stride=(2,2) @bias=(128)f32 @weight=(128,64,3,3)f32 $input=9 #9=(1,64,400,400)f32 #10=(1,128,200,200)f32
+nn.LeakyReLU             _GGHL__backnone._Darknet53__conv_5_1._Convolutional__activate 1 1 10 11 negative_slope=1.000000e-01 #10=(1,128,200,200)f32 #11=(1,128,200,200)f32
+nn.Conv2d                convbn2d_5               1 1 11 12 bias=True dilation=(1,1) groups=1 in_channels=128 kernel_size=(1,1) out_channels=64 padding=(0,0) padding_mode=zeros stride=(1,1) @bias=(64)f32 @weight=(64,128,1,1)f32 $input=11 #11=(1,128,200,200)f32 #12=(1,64,200,200)f32
+nn.LeakyReLU             _GGHL__backnone._Darknet53__rb_5_1_0._Residual_block__conv1._Convolutional__activate 1 1 12 13 negative_slope=1.000000e-01 #12=(1,64,200,200)f32 #13=(1,64,200,200)f32
+nn.Conv2d                convbn2d_6               1 1 13 14 bias=True dilation=(1,1) groups=1 in_channels=64 kernel_size=(3,3) out_channels=128 padding=(1,1) padding_mode=zeros stride=(1,1) @bias=(128)f32 @weight=(128,64,3,3)f32 $input=13 #13=(1,64,200,200)f32 #14=(1,128,200,200)f32
+nn.LeakyReLU             _GGHL__backnone._Darknet53__rb_5_1_0._Residual_block__conv2._Convolutional__activate 1 1 14 15 negative_slope=1.000000e-01 #14=(1,128,200,200)f32 #15=(1,128,200,200)f32
+pnnx.Expression          pnnx_expr_1446           2 1 11 15 16 expr=add(@0,@1) #11=(1,128,200,200)f32 #15=(1,128,200,200)f32 #16=(1,128,200,200)f32
+nn.Conv2d                convbn2d_7               1 1 16 17 bias=True dilation=(1,1) groups=1 in_channels=128 kernel_size=(1,1) out_channels=64 padding=(0,0) padding_mode=zeros stride=(1,1) @bias=(64)f32 @weight=(64,128,1,1)f32 $input=16 #16=(1,128,200,200)f32 #17=(1,64,200,200)f32
+nn.LeakyReLU             _GGHL__backnone._Darknet53__rb_5_1_1._Residual_block__conv1._Convolutional__activate 1 1 17 18 negative_slope=1.000000e-01 #17=(1,64,200,200)f32 #18=(1,64,200,200)f32
+nn.Conv2d                convbn2d_8               1 1 18 19 bias=True dilation=(1,1) groups=1 in_channels=64 kernel_size=(3,3) out_channels=128 padding=(1,1) padding_mode=zeros stride=(1,1) @bias=(128)f32 @weight=(128,64,3,3)f32 $input=18 #18=(1,64,200,200)f32 #19=(1,128,200,200)f32
+nn.LeakyReLU             _GGHL__backnone._Darknet53__rb_5_1_1._Residual_block__conv2._Convolutional__activate 1 1 19 20 negative_slope=1.000000e-01 #19=(1,128,200,200)f32 #20=(1,128,200,200)f32
+pnnx.Expression          pnnx_expr_1444           2 1 16 20 21 expr=add(@0,@1) #16=(1,128,200,200)f32 #20=(1,128,200,200)f32 #21=(1,128,200,200)f32
+nn.Conv2d                convbn2d_9               1 1 21 22 bias=True dilation=(1,1) groups=1 in_channels=128 kernel_size=(3,3) out_channels=256 padding=(1,1) padding_mode=zeros stride=(2,2) @bias=(256)f32 @weight=(256,128,3,3)f32 $input=21 #21=(1,128,200,200)f32 #22=(1,256,100,100)f32
+nn.LeakyReLU             _GGHL__backnone._Darknet53__conv_5_2._Convolutional__activate 1 1 22 23 negative_slope=1.000000e-01 #22=(1,256,100,100)f32 #23=(1,256,100,100)f32
+nn.Conv2d                convbn2d_10              1 1 23 24 bias=True dilation=(1,1) groups=1 in_channels=256 kernel_size=(1,1) out_channels=128 padding=(0,0) padding_mode=zeros stride=(1,1) @bias=(128)f32 @weight=(128,256,1,1)f32 $input=23 #23=(1,256,100,100)f32 #24=(1,128,100,100)f32
+nn.LeakyReLU             _GGHL__backnone._Darknet53__rb_5_2_0._Residual_block__conv1._Convolutional__activate 1 1 24 25 negative_slope=1.000000e-01 #24=(1,128,100,100)f32 #25=(1,128,100,100)f32
+nn.Conv2d                convbn2d_11              1 1 25 26 bias=True dilation=(1,1) groups=1 in_channels=128 kernel_size=(3,3) out_channels=256 padding=(1,1) padding_mode=zeros stride=(1,1) @bias=(256)f32 @weight=(256,128,3,3)f32 $input=25 #25=(1,128,100,100)f32 #26=(1,256,100,100)f32
+nn.LeakyReLU             _GGHL__backnone._Darknet53__rb_5_2_0._Residual_block__conv2._Convolutional__activate 1 1 26 27 negative_slope=1.000000e-01 #26=(1,256,100,100)f32 #27=(1,256,100,100)f32
+pnnx.Expression          pnnx_expr_1442           2 1 23 27 28 expr=add(@0,@1) #23=(1,256,100,100)f32 #27=(1,256,100,100)f32 #28=(1,256,100,100)f32
+nn.Conv2d                convbn2d_12              1 1 28 29 bias=True dilation=(1,1) groups=1 in_channels=256 kernel_size=(1,1) out_channels=128 padding=(0,0) padding_mode=zeros stride=(1,1) @bias=(128)f32 @weight=(128,256,1,1)f32 $input=28 #28=(1,256,100,100)f32 #29=(1,128,100,100)f32
+nn.LeakyReLU             _GGHL__backnone._Darknet53__rb_5_2_1._Residual_block__conv1._Convolutional__activate 1 1 29 30 negative_slope=1.000000e-01 #29=(1,128,100,100)f32 #30=(1,128,100,100)f32
+nn.Conv2d                convbn2d_13              1 1 30 31 bias=True dilation=(1,1) groups=1 in_channels=128 kernel_size=(3,3) out_channels=256 padding=(1,1) padding_mode=zeros stride=(1,1) @bias=(256)f32 @weight=(256,128,3,3)f32 $input=30 #30=(1,128,100,100)f32 #31=(1,256,100,100)f32
+nn.LeakyReLU             _GGHL__backnone._Darknet53__rb_5_2_1._Residual_block__conv2._Convolutional__activate 1 1 31 32 negative_slope=1.000000e-01 #31=(1,256,100,100)f32 #32=(1,256,100,100)f32
+pnnx.Expression          pnnx_expr_1440           2 1 28 32 33 expr=add(@0,@1) #28=(1,256,100,100)f32 #32=(1,256,100,100)f32 #33=(1,256,100,100)f32
+nn.Conv2d                convbn2d_14              1 1 33 34 bias=True dilation=(1,1) groups=1 in_channels=256 kernel_size=(1,1) out_channels=128 padding=(0,0) padding_mode=zeros stride=(1,1) @bias=(128)f32 @weight=(128,256,1,1)f32 $input=33 #33=(1,256,100,100)f32 #34=(1,128,100,100)f32
+nn.LeakyReLU             _GGHL__backnone._Darknet53__rb_5_2_2._Residual_block__conv1._Convolutional__activate 1 1 34 35 negative_slope=1.000000e-01 #34=(1,128,100,100)f32 #35=(1,128,100,100)f32
+nn.Conv2d                convbn2d_15              1 1 35 36 bias=True dilation=(1,1) groups=1 in_channels=128 kernel_size=(3,3) out_channels=256 padding=(1,1) padding_mode=zeros stride=(1,1) @bias=(256)f32 @weight=(256,128,3,3)f32 $input=35 #35=(1,128,100,100)f32 #36=(1,256,100,100)f32
+nn.LeakyReLU             _GGHL__backnone._Darknet53__rb_5_2_2._Residual_block__conv2._Convolutional__activate 1 1 36 37 negative_slope=1.000000e-01 #36=(1,256,100,100)f32 #37=(1,256,100,100)f32
+pnnx.Expression          pnnx_expr_1438           2 1 33 37 38 expr=add(@0,@1) #33=(1,256,100,100)f32 #37=(1,256,100,100)f32 #38=(1,256,100,100)f32
+nn.Conv2d                convbn2d_16              1 1 38 39 bias=True dilation=(1,1) groups=1 in_channels=256 kernel_size=(1,1) out_channels=128 padding=(0,0) padding_mode=zeros stride=(1,1) @bias=(128)f32 @weight=(128,256,1,1)f32 $input=38 #38=(1,256,100,100)f32 #39=(1,128,100,100)f32
+nn.LeakyReLU             _GGHL__backnone._Darknet53__rb_5_2_3._Residual_block__conv1._Convolutional__activate 1 1 39 40 negative_slope=1.000000e-01 #39=(1,128,100,100)f32 #40=(1,128,100,100)f32
+nn.Conv2d                convbn2d_17              1 1 40 41 bias=True dilation=(1,1) groups=1 in_channels=128 kernel_size=(3,3) out_channels=256 padding=(1,1) padding_mode=zeros stride=(1,1) @bias=(256)f32 @weight=(256,128,3,3)f32 $input=40 #40=(1,128,100,100)f32 #41=(1,256,100,100)f32
+nn.LeakyReLU             _GGHL__backnone._Darknet53__rb_5_2_3._Residual_block__conv2._Convolutional__activate 1 1 41 42 negative_slope=1.000000e-01 #41=(1,256,100,100)f32 #42=(1,256,100,100)f32
+pnnx.Expression          pnnx_expr_1436           2 1 38 42 43 expr=add(@0,@1) #38=(1,256,100,100)f32 #42=(1,256,100,100)f32 #43=(1,256,100,100)f32
+nn.Conv2d                convbn2d_18              1 1 43 44 bias=True dilation=(1,1) groups=1 in_channels=256 kernel_size=(1,1) out_channels=128 padding=(0,0) padding_mode=zeros stride=(1,1) @bias=(128)f32 @weight=(128,256,1,1)f32 $input=43 #43=(1,256,100,100)f32 #44=(1,128,100,100)f32
+nn.LeakyReLU             _GGHL__backnone._Darknet53__rb_5_2_4._Residual_block__conv1._Convolutional__activate 1 1 44 45 negative_slope=1.000000e-01 #44=(1,128,100,100)f32 #45=(1,128,100,100)f32
+nn.Conv2d                convbn2d_19              1 1 45 46 bias=True dilation=(1,1) groups=1 in_channels=128 kernel_size=(3,3) out_channels=256 padding=(1,1) padding_mode=zeros stride=(1,1) @bias=(256)f32 @weight=(256,128,3,3)f32 $input=45 #45=(1,128,100,100)f32 #46=(1,256,100,100)f32
+nn.LeakyReLU             _GGHL__backnone._Darknet53__rb_5_2_4._Residual_block__conv2._Convolutional__activate 1 1 46 47 negative_slope=1.000000e-01 #46=(1,256,100,100)f32 #47=(1,256,100,100)f32
+pnnx.Expression          pnnx_expr_1434           2 1 43 47 48 expr=add(@0,@1) #43=(1,256,100,100)f32 #47=(1,256,100,100)f32 #48=(1,256,100,100)f32
+nn.Conv2d                convbn2d_20              1 1 48 49 bias=True dilation=(1,1) groups=1 in_channels=256 kernel_size=(1,1) out_channels=128 padding=(0,0) padding_mode=zeros stride=(1,1) @bias=(128)f32 @weight=(128,256,1,1)f32 $input=48 #48=(1,256,100,100)f32 #49=(1,128,100,100)f32
+nn.LeakyReLU             _GGHL__backnone._Darknet53__rb_5_2_5._Residual_block__conv1._Convolutional__activate 1 1 49 50 negative_slope=1.000000e-01 #49=(1,128,100,100)f32 #50=(1,128,100,100)f32
+nn.Conv2d                convbn2d_21              1 1 50 51 bias=True dilation=(1,1) groups=1 in_channels=128 kernel_size=(3,3) out_channels=256 padding=(1,1) padding_mode=zeros stride=(1,1) @bias=(256)f32 @weight=(256,128,3,3)f32 $input=50 #50=(1,128,100,100)f32 #51=(1,256,100,100)f32
+nn.LeakyReLU             _GGHL__backnone._Darknet53__rb_5_2_5._Residual_block__conv2._Convolutional__activate 1 1 51 52 negative_slope=1.000000e-01 #51=(1,256,100,100)f32 #52=(1,256,100,100)f32
+pnnx.Expression          pnnx_expr_1432           2 1 48 52 53 expr=add(@0,@1) #48=(1,256,100,100)f32 #52=(1,256,100,100)f32 #53=(1,256,100,100)f32
+nn.Conv2d                convbn2d_22              1 1 53 54 bias=True dilation=(1,1) groups=1 in_channels=256 kernel_size=(1,1) out_channels=128 padding=(0,0) padding_mode=zeros stride=(1,1) @bias=(128)f32 @weight=(128,256,1,1)f32 $input=53 #53=(1,256,100,100)f32 #54=(1,128,100,100)f32
+nn.LeakyReLU             _GGHL__backnone._Darknet53__rb_5_2_6._Residual_block__conv1._Convolutional__activate 1 1 54 55 negative_slope=1.000000e-01 #54=(1,128,100,100)f32 #55=(1,128,100,100)f32
+nn.Conv2d                convbn2d_23              1 1 55 56 bias=True dilation=(1,1) groups=1 in_channels=128 kernel_size=(3,3) out_channels=256 padding=(1,1) padding_mode=zeros stride=(1,1) @bias=(256)f32 @weight=(256,128,3,3)f32 $input=55 #55=(1,128,100,100)f32 #56=(1,256,100,100)f32
+nn.LeakyReLU             _GGHL__backnone._Darknet53__rb_5_2_6._Residual_block__conv2._Convolutional__activate 1 1 56 57 negative_slope=1.000000e-01 #56=(1,256,100,100)f32 #57=(1,256,100,100)f32
+pnnx.Expression          pnnx_expr_1430           2 1 53 57 58 expr=add(@0,@1) #53=(1,256,100,100)f32 #57=(1,256,100,100)f32 #58=(1,256,100,100)f32
+nn.Conv2d                convbn2d_24              1 1 58 59 bias=True dilation=(1,1) groups=1 in_channels=256 kernel_size=(1,1) out_channels=128 padding=(0,0) padding_mode=zeros stride=(1,1) @bias=(128)f32 @weight=(128,256,1,1)f32 $input=58 #58=(1,256,100,100)f32 #59=(1,128,100,100)f32
+nn.LeakyReLU             _GGHL__backnone._Darknet53__rb_5_2_7._Residual_block__conv1._Convolutional__activate 1 1 59 60 negative_slope=1.000000e-01 #59=(1,128,100,100)f32 #60=(1,128,100,100)f32
+nn.Conv2d                convbn2d_25              1 1 60 61 bias=True dilation=(1,1) groups=1 in_channels=128 kernel_size=(3,3) out_channels=256 padding=(1,1) padding_mode=zeros stride=(1,1) @bias=(256)f32 @weight=(256,128,3,3)f32 $input=60 #60=(1,128,100,100)f32 #61=(1,256,100,100)f32
+nn.LeakyReLU             _GGHL__backnone._Darknet53__rb_5_2_7._Residual_block__conv2._Convolutional__activate 1 1 61 62 negative_slope=1.000000e-01 #61=(1,256,100,100)f32 #62=(1,256,100,100)f32
+pnnx.Expression          pnnx_expr_1428           2 1 58 62 63 expr=add(@0,@1) #58=(1,256,100,100)f32 #62=(1,256,100,100)f32 #63=(1,256,100,100)f32
+nn.Conv2d                convbn2d_26              1 1 63 64 bias=True dilation=(1,1) groups=1 in_channels=256 kernel_size=(3,3) out_channels=512 padding=(1,1) padding_mode=zeros stride=(2,2) @bias=(512)f32 @weight=(512,256,3,3)f32 $input=63 #63=(1,256,100,100)f32 #64=(1,512,50,50)f32
+nn.LeakyReLU             _GGHL__backnone._Darknet53__conv_5_3._Convolutional__activate 1 1 64 65 negative_slope=1.000000e-01 #64=(1,512,50,50)f32 #65=(1,512,50,50)f32
+nn.Conv2d                convbn2d_27              1 1 65 66 bias=True dilation=(1,1) groups=1 in_channels=512 kernel_size=(1,1) out_channels=256 padding=(0,0) padding_mode=zeros stride=(1,1) @bias=(256)f32 @weight=(256,512,1,1)f32 $input=65 #65=(1,512,50,50)f32 #66=(1,256,50,50)f32
+nn.LeakyReLU             _GGHL__backnone._Darknet53__rb_5_3_0._Residual_block__conv1._Convolutional__activate 1 1 66 67 negative_slope=1.000000e-01 #66=(1,256,50,50)f32 #67=(1,256,50,50)f32
+nn.Conv2d                convbn2d_28              1 1 67 68 bias=True dilation=(1,1) groups=1 in_channels=256 kernel_size=(3,3) out_channels=512 padding=(1,1) padding_mode=zeros stride=(1,1) @bias=(512)f32 @weight=(512,256,3,3)f32 $input=67 #67=(1,256,50,50)f32 #68=(1,512,50,50)f32
+nn.LeakyReLU             _GGHL__backnone._Darknet53__rb_5_3_0._Residual_block__conv2._Convolutional__activate 1 1 68 69 negative_slope=1.000000e-01 #68=(1,512,50,50)f32 #69=(1,512,50,50)f32
+pnnx.Expression          pnnx_expr_1426           2 1 65 69 70 expr=add(@0,@1) #65=(1,512,50,50)f32 #69=(1,512,50,50)f32 #70=(1,512,50,50)f32
+nn.Conv2d                convbn2d_29              1 1 70 71 bias=True dilation=(1,1) groups=1 in_channels=512 kernel_size=(1,1) out_channels=256 padding=(0,0) padding_mode=zeros stride=(1,1) @bias=(256)f32 @weight=(256,512,1,1)f32 $input=70 #70=(1,512,50,50)f32 #71=(1,256,50,50)f32
+nn.LeakyReLU             _GGHL__backnone._Darknet53__rb_5_3_1._Residual_block__conv1._Convolutional__activate 1 1 71 72 negative_slope=1.000000e-01 #71=(1,256,50,50)f32 #72=(1,256,50,50)f32
+nn.Conv2d                convbn2d_30              1 1 72 73 bias=True dilation=(1,1) groups=1 in_channels=256 kernel_size=(3,3) out_channels=512 padding=(1,1) padding_mode=zeros stride=(1,1) @bias=(512)f32 @weight=(512,256,3,3)f32 $input=72 #72=(1,256,50,50)f32 #73=(1,512,50,50)f32
+nn.LeakyReLU             _GGHL__backnone._Darknet53__rb_5_3_1._Residual_block__conv2._Convolutional__activate 1 1 73 74 negative_slope=1.000000e-01 #73=(1,512,50,50)f32 #74=(1,512,50,50)f32
+pnnx.Expression          pnnx_expr_1424           2 1 70 74 75 expr=add(@0,@1) #70=(1,512,50,50)f32 #74=(1,512,50,50)f32 #75=(1,512,50,50)f32
+nn.Conv2d                convbn2d_31              1 1 75 76 bias=True dilation=(1,1) groups=1 in_channels=512 kernel_size=(1,1) out_channels=256 padding=(0,0) padding_mode=zeros stride=(1,1) @bias=(256)f32 @weight=(256,512,1,1)f32 $input=75 #75=(1,512,50,50)f32 #76=(1,256,50,50)f32
+nn.LeakyReLU             _GGHL__backnone._Darknet53__rb_5_3_2._Residual_block__conv1._Convolutional__activate 1 1 76 77 negative_slope=1.000000e-01 #76=(1,256,50,50)f32 #77=(1,256,50,50)f32
+nn.Conv2d                convbn2d_32              1 1 77 78 bias=True dilation=(1,1) groups=1 in_channels=256 kernel_size=(3,3) out_channels=512 padding=(1,1) padding_mode=zeros stride=(1,1) @bias=(512)f32 @weight=(512,256,3,3)f32 $input=77 #77=(1,256,50,50)f32 #78=(1,512,50,50)f32
+nn.LeakyReLU             _GGHL__backnone._Darknet53__rb_5_3_2._Residual_block__conv2._Convolutional__activate 1 1 78 79 negative_slope=1.000000e-01 #78=(1,512,50,50)f32 #79=(1,512,50,50)f32
+pnnx.Expression          pnnx_expr_1422           2 1 75 79 80 expr=add(@0,@1) #75=(1,512,50,50)f32 #79=(1,512,50,50)f32 #80=(1,512,50,50)f32
+nn.Conv2d                convbn2d_33              1 1 80 81 bias=True dilation=(1,1) groups=1 in_channels=512 kernel_size=(1,1) out_channels=256 padding=(0,0) padding_mode=zeros stride=(1,1) @bias=(256)f32 @weight=(256,512,1,1)f32 $input=80 #80=(1,512,50,50)f32 #81=(1,256,50,50)f32
+nn.LeakyReLU             _GGHL__backnone._Darknet53__rb_5_3_3._Residual_block__conv1._Convolutional__activate 1 1 81 82 negative_slope=1.000000e-01 #81=(1,256,50,50)f32 #82=(1,256,50,50)f32
+nn.Conv2d                convbn2d_34              1 1 82 83 bias=True dilation=(1,1) groups=1 in_channels=256 kernel_size=(3,3) out_channels=512 padding=(1,1) padding_mode=zeros stride=(1,1) @bias=(512)f32 @weight=(512,256,3,3)f32 $input=82 #82=(1,256,50,50)f32 #83=(1,512,50,50)f32
+nn.LeakyReLU             _GGHL__backnone._Darknet53__rb_5_3_3._Residual_block__conv2._Convolutional__activate 1 1 83 84 negative_slope=1.000000e-01 #83=(1,512,50,50)f32 #84=(1,512,50,50)f32
+pnnx.Expression          pnnx_expr_1420           2 1 80 84 85 expr=add(@0,@1) #80=(1,512,50,50)f32 #84=(1,512,50,50)f32 #85=(1,512,50,50)f32
+nn.Conv2d                convbn2d_35              1 1 85 86 bias=True dilation=(1,1) groups=1 in_channels=512 kernel_size=(1,1) out_channels=256 padding=(0,0) padding_mode=zeros stride=(1,1) @bias=(256)f32 @weight=(256,512,1,1)f32 $input=85 #85=(1,512,50,50)f32 #86=(1,256,50,50)f32
+nn.LeakyReLU             _GGHL__backnone._Darknet53__rb_5_3_4._Residual_block__conv1._Convolutional__activate 1 1 86 87 negative_slope=1.000000e-01 #86=(1,256,50,50)f32 #87=(1,256,50,50)f32
+nn.Conv2d                convbn2d_36              1 1 87 88 bias=True dilation=(1,1) groups=1 in_channels=256 kernel_size=(3,3) out_channels=512 padding=(1,1) padding_mode=zeros stride=(1,1) @bias=(512)f32 @weight=(512,256,3,3)f32 $input=87 #87=(1,256,50,50)f32 #88=(1,512,50,50)f32
+nn.LeakyReLU             _GGHL__backnone._Darknet53__rb_5_3_4._Residual_block__conv2._Convolutional__activate 1 1 88 89 negative_slope=1.000000e-01 #88=(1,512,50,50)f32 #89=(1,512,50,50)f32
+pnnx.Expression          pnnx_expr_1418           2 1 85 89 90 expr=add(@0,@1) #85=(1,512,50,50)f32 #89=(1,512,50,50)f32 #90=(1,512,50,50)f32
+nn.Conv2d                convbn2d_37              1 1 90 91 bias=True dilation=(1,1) groups=1 in_channels=512 kernel_size=(1,1) out_channels=256 padding=(0,0) padding_mode=zeros stride=(1,1) @bias=(256)f32 @weight=(256,512,1,1)f32 $input=90 #90=(1,512,50,50)f32 #91=(1,256,50,50)f32
+nn.LeakyReLU             _GGHL__backnone._Darknet53__rb_5_3_5._Residual_block__conv1._Convolutional__activate 1 1 91 92 negative_slope=1.000000e-01 #91=(1,256,50,50)f32 #92=(1,256,50,50)f32
+nn.Conv2d                convbn2d_38              1 1 92 93 bias=True dilation=(1,1) groups=1 in_channels=256 kernel_size=(3,3) out_channels=512 padding=(1,1) padding_mode=zeros stride=(1,1) @bias=(512)f32 @weight=(512,256,3,3)f32 $input=92 #92=(1,256,50,50)f32 #93=(1,512,50,50)f32
+nn.LeakyReLU             _GGHL__backnone._Darknet53__rb_5_3_5._Residual_block__conv2._Convolutional__activate 1 1 93 94 negative_slope=1.000000e-01 #93=(1,512,50,50)f32 #94=(1,512,50,50)f32
+pnnx.Expression          pnnx_expr_1416           2 1 90 94 95 expr=add(@0,@1) #90=(1,512,50,50)f32 #94=(1,512,50,50)f32 #95=(1,512,50,50)f32
+nn.Conv2d                convbn2d_39              1 1 95 96 bias=True dilation=(1,1) groups=1 in_channels=512 kernel_size=(1,1) out_channels=256 padding=(0,0) padding_mode=zeros stride=(1,1) @bias=(256)f32 @weight=(256,512,1,1)f32 $input=95 #95=(1,512,50,50)f32 #96=(1,256,50,50)f32
+nn.LeakyReLU             _GGHL__backnone._Darknet53__rb_5_3_6._Residual_block__conv1._Convolutional__activate 1 1 96 97 negative_slope=1.000000e-01 #96=(1,256,50,50)f32 #97=(1,256,50,50)f32
+nn.Conv2d                convbn2d_40              1 1 97 98 bias=True dilation=(1,1) groups=1 in_channels=256 kernel_size=(3,3) out_channels=512 padding=(1,1) padding_mode=zeros stride=(1,1) @bias=(512)f32 @weight=(512,256,3,3)f32 $input=97 #97=(1,256,50,50)f32 #98=(1,512,50,50)f32
+nn.LeakyReLU             _GGHL__backnone._Darknet53__rb_5_3_6._Residual_block__conv2._Convolutional__activate 1 1 98 99 negative_slope=1.000000e-01 #98=(1,512,50,50)f32 #99=(1,512,50,50)f32
+pnnx.Expression          pnnx_expr_1414           2 1 95 99 100 expr=add(@0,@1) #95=(1,512,50,50)f32 #99=(1,512,50,50)f32 #100=(1,512,50,50)f32
+nn.Conv2d                convbn2d_41              1 1 100 101 bias=True dilation=(1,1) groups=1 in_channels=512 kernel_size=(1,1) out_channels=256 padding=(0,0) padding_mode=zeros stride=(1,1) @bias=(256)f32 @weight=(256,512,1,1)f32 $input=100 #100=(1,512,50,50)f32 #101=(1,256,50,50)f32
+nn.LeakyReLU             _GGHL__backnone._Darknet53__rb_5_3_7._Residual_block__conv1._Convolutional__activate 1 1 101 102 negative_slope=1.000000e-01 #101=(1,256,50,50)f32 #102=(1,256,50,50)f32
+nn.Conv2d                convbn2d_42              1 1 102 103 bias=True dilation=(1,1) groups=1 in_channels=256 kernel_size=(3,3) out_channels=512 padding=(1,1) padding_mode=zeros stride=(1,1) @bias=(512)f32 @weight=(512,256,3,3)f32 $input=102 #102=(1,256,50,50)f32 #103=(1,512,50,50)f32
+nn.LeakyReLU             _GGHL__backnone._Darknet53__rb_5_3_7._Residual_block__conv2._Convolutional__activate 1 1 103 104 negative_slope=1.000000e-01 #103=(1,512,50,50)f32 #104=(1,512,50,50)f32
+pnnx.Expression          pnnx_expr_1412           2 1 100 104 105 expr=add(@0,@1) #100=(1,512,50,50)f32 #104=(1,512,50,50)f32 #105=(1,512,50,50)f32
+nn.Conv2d                convbn2d_43              1 1 105 106 bias=True dilation=(1,1) groups=1 in_channels=512 kernel_size=(3,3) out_channels=1024 padding=(1,1) padding_mode=zeros stride=(2,2) @bias=(1024)f32 @weight=(1024,512,3,3)f32 $input=105 #105=(1,512,50,50)f32 #106=(1,1024,25,25)f32
+nn.LeakyReLU             _GGHL__backnone._Darknet53__conv_5_4._Convolutional__activate 1 1 106 107 negative_slope=1.000000e-01 #106=(1,1024,25,25)f32 #107=(1,1024,25,25)f32
+nn.Conv2d                convbn2d_44              1 1 107 108 bias=True dilation=(1,1) groups=1 in_channels=1024 kernel_size=(1,1) out_channels=512 padding=(0,0) padding_mode=zeros stride=(1,1) @bias=(512)f32 @weight=(512,1024,1,1)f32 $input=107 #107=(1,1024,25,25)f32 #108=(1,512,25,25)f32
+nn.LeakyReLU             _GGHL__backnone._Darknet53__rb_5_4_0._Residual_block__conv1._Convolutional__activate 1 1 108 109 negative_slope=1.000000e-01 #108=(1,512,25,25)f32 #109=(1,512,25,25)f32
+nn.Conv2d                convbn2d_45              1 1 109 110 bias=True dilation=(1,1) groups=1 in_channels=512 kernel_size=(3,3) out_channels=1024 padding=(1,1) padding_mode=zeros stride=(1,1) @bias=(1024)f32 @weight=(1024,512,3,3)f32 $input=109 #109=(1,512,25,25)f32 #110=(1,1024,25,25)f32
+nn.LeakyReLU             _GGHL__backnone._Darknet53__rb_5_4_0._Residual_block__conv2._Convolutional__activate 1 1 110 111 negative_slope=1.000000e-01 #110=(1,1024,25,25)f32 #111=(1,1024,25,25)f32
+pnnx.Expression          pnnx_expr_1410           2 1 107 111 112 expr=add(@0,@1) #107=(1,1024,25,25)f32 #111=(1,1024,25,25)f32 #112=(1,1024,25,25)f32
+nn.Conv2d                convbn2d_46              1 1 112 113 bias=True dilation=(1,1) groups=1 in_channels=1024 kernel_size=(1,1) out_channels=512 padding=(0,0) padding_mode=zeros stride=(1,1) @bias=(512)f32 @weight=(512,1024,1,1)f32 $input=112 #112=(1,1024,25,25)f32 #113=(1,512,25,25)f32
+nn.LeakyReLU             _GGHL__backnone._Darknet53__rb_5_4_1._Residual_block__conv1._Convolutional__activate 1 1 113 114 negative_slope=1.000000e-01 #113=(1,512,25,25)f32 #114=(1,512,25,25)f32
+nn.Conv2d                convbn2d_47              1 1 114 115 bias=True dilation=(1,1) groups=1 in_channels=512 kernel_size=(3,3) out_channels=1024 padding=(1,1) padding_mode=zeros stride=(1,1) @bias=(1024)f32 @weight=(1024,512,3,3)f32 $input=114 #114=(1,512,25,25)f32 #115=(1,1024,25,25)f32
+nn.LeakyReLU             _GGHL__backnone._Darknet53__rb_5_4_1._Residual_block__conv2._Convolutional__activate 1 1 115 116 negative_slope=1.000000e-01 #115=(1,1024,25,25)f32 #116=(1,1024,25,25)f32
+pnnx.Expression          pnnx_expr_1408           2 1 112 116 117 expr=add(@0,@1) #112=(1,1024,25,25)f32 #116=(1,1024,25,25)f32 #117=(1,1024,25,25)f32
+nn.Conv2d                convbn2d_48              1 1 117 118 bias=True dilation=(1,1) groups=1 in_channels=1024 kernel_size=(1,1) out_channels=512 padding=(0,0) padding_mode=zeros stride=(1,1) @bias=(512)f32 @weight=(512,1024,1,1)f32 $input=117 #117=(1,1024,25,25)f32 #118=(1,512,25,25)f32
+nn.LeakyReLU             _GGHL__backnone._Darknet53__rb_5_4_2._Residual_block__conv1._Convolutional__activate 1 1 118 119 negative_slope=1.000000e-01 #118=(1,512,25,25)f32 #119=(1,512,25,25)f32
+nn.Conv2d                convbn2d_49              1 1 119 120 bias=True dilation=(1,1) groups=1 in_channels=512 kernel_size=(3,3) out_channels=1024 padding=(1,1) padding_mode=zeros stride=(1,1) @bias=(1024)f32 @weight=(1024,512,3,3)f32 $input=119 #119=(1,512,25,25)f32 #120=(1,1024,25,25)f32
+nn.LeakyReLU             _GGHL__backnone._Darknet53__rb_5_4_2._Residual_block__conv2._Convolutional__activate 1 1 120 121 negative_slope=1.000000e-01 #120=(1,1024,25,25)f32 #121=(1,1024,25,25)f32
+pnnx.Expression          pnnx_expr_1406           2 1 117 121 122 expr=add(@0,@1) #117=(1,1024,25,25)f32 #121=(1,1024,25,25)f32 #122=(1,1024,25,25)f32
+nn.Conv2d                convbn2d_50              1 1 122 123 bias=True dilation=(1,1) groups=1 in_channels=1024 kernel_size=(1,1) out_channels=512 padding=(0,0) padding_mode=zeros stride=(1,1) @bias=(512)f32 @weight=(512,1024,1,1)f32 $input=122 #122=(1,1024,25,25)f32 #123=(1,512,25,25)f32
+nn.LeakyReLU             _GGHL__backnone._Darknet53__rb_5_4_3._Residual_block__conv1._Convolutional__activate 1 1 123 124 negative_slope=1.000000e-01 #123=(1,512,25,25)f32 #124=(1,512,25,25)f32
+nn.Conv2d                convbn2d_51              1 1 124 125 bias=True dilation=(1,1) groups=1 in_channels=512 kernel_size=(3,3) out_channels=1024 padding=(1,1) padding_mode=zeros stride=(1,1) @bias=(1024)f32 @weight=(1024,512,3,3)f32 $input=124 #124=(1,512,25,25)f32 #125=(1,1024,25,25)f32
+nn.LeakyReLU             _GGHL__backnone._Darknet53__rb_5_4_3._Residual_block__conv2._Convolutional__activate 1 1 125 126 negative_slope=1.000000e-01 #125=(1,1024,25,25)f32 #126=(1,1024,25,25)f32
+pnnx.Expression          pnnx_expr_1404           2 1 122 126 127 expr=add(@0,@1) #122=(1,1024,25,25)f32 #126=(1,1024,25,25)f32 #127=(1,1024,25,25)f32
+nn.Conv2d                convbn2d_52              1 1 127 128 bias=True dilation=(1,1) groups=1 in_channels=1024 kernel_size=(1,1) out_channels=512 padding=(0,0) padding_mode=zeros stride=(1,1) @bias=(512)f32 @weight=(512,1024,1,1)f32 $input=127 #127=(1,1024,25,25)f32 #128=(1,512,25,25)f32
+nn.LeakyReLU             _GGHL__fpn._Neck__conv_set_0.0._Convolutional__activate 1 1 128 129 negative_slope=1.000000e-01 #128=(1,512,25,25)f32 #129=(1,512,25,25)f32
+nn.MaxPool2d             _GGHL__fpn._Neck__conv_set_0.1._SPP__maxpool5 1 1 129 130 ceil_mode=False dilation=(1,1) kernel_size=(5,5) padding=(2,2) return_indices=False stride=(1,1) #129=(1,512,25,25)f32 #130=(1,512,25,25)f32
+nn.MaxPool2d             _GGHL__fpn._Neck__conv_set_0.1._SPP__maxpool9 1 1 129 131 ceil_mode=False dilation=(1,1) kernel_size=(9,9) padding=(4,4) return_indices=False stride=(1,1) #129=(1,512,25,25)f32 #131=(1,512,25,25)f32
+nn.MaxPool2d             _GGHL__fpn._Neck__conv_set_0.1._SPP__maxpool13 1 1 129 132 ceil_mode=False dilation=(1,1) kernel_size=(13,13) padding=(6,6) return_indices=False stride=(1,1) #129=(1,512,25,25)f32 #132=(1,512,25,25)f32
+torch.cat                torch.cat_353            4 1 129 130 131 132 133 dim=1 #129=(1,512,25,25)f32 #130=(1,512,25,25)f32 #131=(1,512,25,25)f32 #132=(1,512,25,25)f32 #133=(1,2048,25,25)f32
+nn.Conv2d                _GGHL__fpn._Neck__conv_set_0.1._SPP__outconv 1 1 133 134 bias=True dilation=(1,1) groups=1 in_channels=2048 kernel_size=(1,1) out_channels=512 padding=(0,0) padding_mode=zeros stride=(1,1) @bias=(512)f32 @weight=(512,2048,1,1)f32 #133=(1,2048,25,25)f32 #134=(1,512,25,25)f32
+nn.Conv2d                convbn2d_53              1 1 134 135 bias=True dilation=(1,1) groups=1 in_channels=512 kernel_size=(3,3) out_channels=1024 padding=(1,1) padding_mode=zeros stride=(1,1) @bias=(1024)f32 @weight=(1024,512,3,3)f32 $input=134 #134=(1,512,25,25)f32 #135=(1,1024,25,25)f32
+nn.LeakyReLU             _GGHL__fpn._Neck__conv_set_0.2._Convolutional__activate 1 1 135 136 negative_slope=1.000000e-01 #135=(1,1024,25,25)f32 #136=(1,1024,25,25)f32
+nn.Conv2d                convbn2d_54              1 1 136 137 bias=True dilation=(1,1) groups=1 in_channels=1024 kernel_size=(1,1) out_channels=512 padding=(0,0) padding_mode=zeros stride=(1,1) @bias=(512)f32 @weight=(512,1024,1,1)f32 $input=136 #136=(1,1024,25,25)f32 #137=(1,512,25,25)f32
+nn.LeakyReLU             _GGHL__fpn._Neck__conv_set_0.3._Convolutional__activate 1 1 137 138 negative_slope=1.000000e-01 #137=(1,512,25,25)f32 #138=(1,512,25,25)f32
+pnnx.Expression          pnnx_expr_1400           0 1 139 expr=False
+pnnx.Expression          pnnx_expr_1399           0 1 140 expr=None
+pnnx.Expression          pnnx_expr_1394           0 1 141 expr=6
+pnnx.Expression          pnnx_expr_1381           0 1 142 expr=[1,25,25]
+aten::rand               pnnx_73                  5 1 142 141 140 140 139 143 #143=(1,25,25)f32
+torch.lt                 torch.lt_374             1 1 143 144 other=1.111111e-02 $input=143 #143=(1,25,25)f32 #144=(1,25,25)bool
+torch.unsqueeze          torch.unsqueeze_392      1 1 144 145 dim=1 $input=144 #144=(1,25,25)bool #145=(1,1,25,25)f32
+F.max_pool2d             F.max_pool2d_3           1 1 145 146 ceil_mode=False dilation=(1,1) kernel_size=(3,3) padding=(1,1) return_indices=False stride=(1,1) $input=145 #145=(1,1,25,25)f32 #146=(1,1,25,25)f32
+torch.squeeze            torch.squeeze_380        1 1 146 147 dim=1 $input=146 #146=(1,1,25,25)f32 #147=(1,25,25)f32
+pnnx.Expression          pnnx_expr_1341           1 1 147 148 expr=sub(1,@0) #147=(1,25,25)f32 #148=(1,25,25)f32
+pnnx.Attribute           pnnx_fold_585            0 1 149 @pnnx_fold_585=(1,1,25,25)f32 #149=(1,1,25,25)f32
+torch.sum                torch.sum_386            1 1 148 150 $input=148 #148=(1,25,25)f32
+pnnx.Expression          pnnx_expr_1325           3 1 138 149 150 151 expr=div(mul(mul(@0,@1),625),@2) #138=(1,512,25,25)f32 #149=(1,1,25,25)f32 #151=(1,512,25,25)f32
+nn.Conv2d                convbn2d_55              1 1 151 152 bias=True dilation=(1,1) groups=1 in_channels=512 kernel_size=(3,3) out_channels=1024 padding=(1,1) padding_mode=zeros stride=(1,1) @bias=(1024)f32 @weight=(1024,512,3,3)f32 $input=151 #151=(1,512,25,25)f32 #152=(1,1024,25,25)f32
+nn.LeakyReLU             _GGHL__fpn._Neck__conv_set_0.5._Convolutional__activate 1 1 152 153 negative_slope=1.000000e-01 #152=(1,1024,25,25)f32 #153=(1,1024,25,25)f32
+nn.Conv2d                convbn2d_56              1 1 153 154 bias=True dilation=(1,1) groups=1 in_channels=1024 kernel_size=(1,1) out_channels=512 padding=(0,0) padding_mode=zeros stride=(1,1) @bias=(512)f32 @weight=(512,1024,1,1)f32 $input=153 #153=(1,1024,25,25)f32 #154=(1,512,25,25)f32
+nn.LeakyReLU             _GGHL__fpn._Neck__conv_set_0.6._Convolutional__activate 1 1 154 155 negative_slope=1.000000e-01 #154=(1,512,25,25)f32 #155=(1,512,25,25)f32
+nn.Conv2d                convbn2d_57              1 1 155 156 bias=True dilation=(1,1) groups=1 in_channels=512 kernel_size=(1,1) out_channels=256 padding=(0,0) padding_mode=zeros stride=(1,1) @bias=(256)f32 @weight=(256,512,1,1)f32 $input=155 #155=(1,512,25,25)f32 #156=(1,256,25,25)f32
+nn.LeakyReLU             _GGHL__fpn._Neck__conv01up._Convolutional__activate 1 1 156 157 negative_slope=1.000000e-01 #156=(1,256,25,25)f32 #157=(1,256,25,25)f32
+F.upsample_nearest       F.upsample_nearest_15    1 1 157 158 scale_factor=(2.000000e+00,2.000000e+00) $input=157 #157=(1,256,25,25)f32 #158=(1,256,50,50)f32
+torch.cat                torch.cat_354            2 1 158 105 159 dim=1 #158=(1,256,50,50)f32 #105=(1,512,50,50)f32 #159=(1,768,50,50)f32
+nn.Conv2d                convbn2d_58              1 1 159 160 bias=True dilation=(1,1) groups=1 in_channels=768 kernel_size=(1,1) out_channels=256 padding=(0,0) padding_mode=zeros stride=(1,1) @bias=(256)f32 @weight=(256,768,1,1)f32 $input=159 #159=(1,768,50,50)f32 #160=(1,256,50,50)f32
+nn.LeakyReLU             _GGHL__fpn._Neck__conv_set_1.0._Convolutional__activate 1 1 160 161 negative_slope=1.000000e-01 #160=(1,256,50,50)f32 #161=(1,256,50,50)f32
+nn.Conv2d                convbn2d_59              1 1 161 162 bias=True dilation=(1,1) groups=1 in_channels=256 kernel_size=(3,3) out_channels=512 padding=(1,1) padding_mode=zeros stride=(1,1) @bias=(512)f32 @weight=(512,256,3,3)f32 $input=161 #161=(1,256,50,50)f32 #162=(1,512,50,50)f32
+nn.LeakyReLU             _GGHL__fpn._Neck__conv_set_1.1._Convolutional__activate 1 1 162 163 negative_slope=1.000000e-01 #162=(1,512,50,50)f32 #163=(1,512,50,50)f32
+nn.Conv2d                convbn2d_60              1 1 163 164 bias=True dilation=(1,1) groups=1 in_channels=512 kernel_size=(1,1) out_channels=256 padding=(0,0) padding_mode=zeros stride=(1,1) @bias=(256)f32 @weight=(256,512,1,1)f32 $input=163 #163=(1,512,50,50)f32 #164=(1,256,50,50)f32
+nn.LeakyReLU             _GGHL__fpn._Neck__conv_set_1.2._Convolutional__activate 1 1 164 165 negative_slope=1.000000e-01 #164=(1,256,50,50)f32 #165=(1,256,50,50)f32
+pnnx.Expression          pnnx_expr_1300           0 1 166 expr=[1,50,50]
+aten::rand               pnnx_173                 5 1 166 141 140 140 139 167 #167=(1,50,50)f32
+torch.lt                 torch.lt_375             1 1 167 168 other=1.111111e-02 $input=167 #167=(1,50,50)f32 #168=(1,50,50)bool
+torch.unsqueeze          torch.unsqueeze_394      1 1 168 169 dim=1 $input=168 #168=(1,50,50)bool #169=(1,1,50,50)f32
+F.max_pool2d             F.max_pool2d_4           1 1 169 170 ceil_mode=False dilation=(1,1) kernel_size=(3,3) padding=(1,1) return_indices=False stride=(1,1) $input=169 #169=(1,1,50,50)f32 #170=(1,1,50,50)f32
+torch.squeeze            torch.squeeze_381        1 1 170 171 dim=1 $input=170 #170=(1,1,50,50)f32 #171=(1,50,50)f32
+pnnx.Expression          pnnx_expr_1260           1 1 171 172 expr=sub(1,@0) #171=(1,50,50)f32 #172=(1,50,50)f32
+pnnx.Attribute           pnnx_fold_679            0 1 173 @pnnx_fold_679=(1,1,50,50)f32 #173=(1,1,50,50)f32
+torch.sum                torch.sum_387            1 1 172 174 $input=172 #172=(1,50,50)f32
+pnnx.Expression          pnnx_expr_1244           3 1 165 173 174 175 expr=div(mul(mul(@0,@1),2500),@2) #165=(1,256,50,50)f32 #173=(1,1,50,50)f32 #175=(1,256,50,50)f32
+nn.Conv2d                convbn2d_61              1 1 175 176 bias=True dilation=(1,1) groups=1 in_channels=256 kernel_size=(3,3) out_channels=512 padding=(1,1) padding_mode=zeros stride=(1,1) @bias=(512)f32 @weight=(512,256,3,3)f32 $input=175 #175=(1,256,50,50)f32 #176=(1,512,50,50)f32
+nn.LeakyReLU             _GGHL__fpn._Neck__conv_set_1.4._Convolutional__activate 1 1 176 177 negative_slope=1.000000e-01 #176=(1,512,50,50)f32 #177=(1,512,50,50)f32
+nn.Conv2d                convbn2d_62              1 1 177 178 bias=True dilation=(1,1) groups=1 in_channels=512 kernel_size=(1,1) out_channels=256 padding=(0,0) padding_mode=zeros stride=(1,1) @bias=(256)f32 @weight=(256,512,1,1)f32 $input=177 #177=(1,512,50,50)f32 #178=(1,256,50,50)f32
+nn.LeakyReLU             _GGHL__fpn._Neck__conv_set_1.5._Convolutional__activate 1 1 178 179 negative_slope=1.000000e-01 #178=(1,256,50,50)f32 #179=(1,256,50,50)f32
+nn.Conv2d                convbn2d_63              1 1 179 180 bias=True dilation=(1,1) groups=1 in_channels=256 kernel_size=(1,1) out_channels=128 padding=(0,0) padding_mode=zeros stride=(1,1) @bias=(128)f32 @weight=(128,256,1,1)f32 $input=179 #179=(1,256,50,50)f32 #180=(1,128,50,50)f32
+nn.LeakyReLU             _GGHL__fpn._Neck__conv12up._Convolutional__activate 1 1 180 181 negative_slope=1.000000e-01 #180=(1,128,50,50)f32 #181=(1,128,50,50)f32
+F.upsample_nearest       F.upsample_nearest_16    1 1 181 182 scale_factor=(2.000000e+00,2.000000e+00) $input=181 #181=(1,128,50,50)f32 #182=(1,128,100,100)f32
+torch.cat                torch.cat_355            2 1 182 63 183 dim=1 #182=(1,128,100,100)f32 #63=(1,256,100,100)f32 #183=(1,384,100,100)f32
+nn.Conv2d                convbn2d_64              1 1 183 184 bias=True dilation=(1,1) groups=1 in_channels=384 kernel_size=(1,1) out_channels=128 padding=(0,0) padding_mode=zeros stride=(1,1) @bias=(128)f32 @weight=(128,384,1,1)f32 $input=183 #183=(1,384,100,100)f32 #184=(1,128,100,100)f32
+nn.LeakyReLU             _GGHL__fpn._Neck__conv_set_2.0._Convolutional__activate 1 1 184 185 negative_slope=1.000000e-01 #184=(1,128,100,100)f32 #185=(1,128,100,100)f32
+nn.Conv2d                convbn2d_65              1 1 185 186 bias=True dilation=(1,1) groups=1 in_channels=128 kernel_size=(3,3) out_channels=256 padding=(1,1) padding_mode=zeros stride=(1,1) @bias=(256)f32 @weight=(256,128,3,3)f32 $input=185 #185=(1,128,100,100)f32 #186=(1,256,100,100)f32
+nn.LeakyReLU             _GGHL__fpn._Neck__conv_set_2.1._Convolutional__activate 1 1 186 187 negative_slope=1.000000e-01 #186=(1,256,100,100)f32 #187=(1,256,100,100)f32
+nn.Conv2d                convbn2d_66              1 1 187 188 bias=True dilation=(1,1) groups=1 in_channels=256 kernel_size=(1,1) out_channels=128 padding=(0,0) padding_mode=zeros stride=(1,1) @bias=(128)f32 @weight=(128,256,1,1)f32 $input=187 #187=(1,256,100,100)f32 #188=(1,128,100,100)f32
+nn.LeakyReLU             _GGHL__fpn._Neck__conv_set_2.2._Convolutional__activate 1 1 188 189 negative_slope=1.000000e-01 #188=(1,128,100,100)f32 #189=(1,128,100,100)f32
+pnnx.Expression          pnnx_expr_1219           0 1 190 expr=[1,100,100]
+aten::rand               pnnx_273                 5 1 190 141 140 140 139 191 #191=(1,100,100)f32
+torch.lt                 torch.lt_376             1 1 191 192 other=1.111111e-02 $input=191 #191=(1,100,100)f32 #192=(1,100,100)bool
+torch.unsqueeze          torch.unsqueeze_396      1 1 192 193 dim=1 $input=192 #192=(1,100,100)bool #193=(1,1,100,100)f32
+F.max_pool2d             F.max_pool2d_5           1 1 193 194 ceil_mode=False dilation=(1,1) kernel_size=(3,3) padding=(1,1) return_indices=False stride=(1,1) $input=193 #193=(1,1,100,100)f32 #194=(1,1,100,100)f32
+torch.squeeze            torch.squeeze_382        1 1 194 195 dim=1 $input=194 #194=(1,1,100,100)f32 #195=(1,100,100)f32
+pnnx.Expression          pnnx_expr_1179           1 1 195 196 expr=sub(1,@0) #195=(1,100,100)f32 #196=(1,100,100)f32
+pnnx.Attribute           pnnx_fold_773            0 1 197 @pnnx_fold_773=(1,1,100,100)f32 #197=(1,1,100,100)f32
+torch.sum                torch.sum_388            1 1 196 198 $input=196 #196=(1,100,100)f32
+pnnx.Expression          pnnx_expr_1163           3 1 189 197 198 199 expr=div(mul(mul(@0,@1),10000),@2) #189=(1,128,100,100)f32 #197=(1,1,100,100)f32 #199=(1,128,100,100)f32
+nn.Conv2d                convbn2d_67              1 1 199 200 bias=True dilation=(1,1) groups=1 in_channels=128 kernel_size=(3,3) out_channels=256 padding=(1,1) padding_mode=zeros stride=(1,1) @bias=(256)f32 @weight=(256,128,3,3)f32 $input=199 #199=(1,128,100,100)f32 #200=(1,256,100,100)f32
+nn.LeakyReLU             _GGHL__fpn._Neck__conv_set_2.4._Convolutional__activate 1 1 200 201 negative_slope=1.000000e-01 #200=(1,256,100,100)f32 #201=(1,256,100,100)f32
+nn.Conv2d                convbn2d_68              1 1 201 202 bias=True dilation=(1,1) groups=1 in_channels=256 kernel_size=(1,1) out_channels=128 padding=(0,0) padding_mode=zeros stride=(1,1) @bias=(128)f32 @weight=(128,256,1,1)f32 $input=201 #201=(1,256,100,100)f32 #202=(1,128,100,100)f32
+nn.LeakyReLU             _GGHL__fpn._Neck__conv_set_2.5._Convolutional__activate 1 1 202 203 negative_slope=1.000000e-01 #202=(1,128,100,100)f32 #203=(1,128,100,100)f32
+nn.Conv2d                convbn2d_69              1 1 155 204 bias=True dilation=(1,1) groups=1 in_channels=512 kernel_size=(3,3) out_channels=1024 padding=(1,1) padding_mode=zeros stride=(1,1) @bias=(1024)f32 @weight=(1024,512,3,3)f32 $input=155 #155=(1,512,25,25)f32 #204=(1,1024,25,25)f32
+nn.LeakyReLU             _GGHL__fpn._Neck__loc0.0._Convolutional__activate 1 1 204 205 negative_slope=1.000000e-01 #204=(1,1024,25,25)f32 #205=(1,1024,25,25)f32
+nn.Conv2d                _GGHL__fpn._Neck__loc0.1 1 1 205 206 bias=True dilation=(1,1) groups=1 in_channels=1024 kernel_size=(1,1) out_channels=10 padding=(0,0) padding_mode=zeros stride=(1,1) @bias=(10)f32 @weight=(10,1024,1,1)f32 #205=(1,1024,25,25)f32 #206=(1,10,25,25)f32
+nn.Conv2d                convbn2d_70              1 1 155 207 bias=True dilation=(1,1) groups=1 in_channels=512 kernel_size=(3,3) out_channels=1024 padding=(1,1) padding_mode=zeros stride=(1,1) @bias=(1024)f32 @weight=(1024,512,3,3)f32 $input=155 #155=(1,512,25,25)f32 #207=(1,1024,25,25)f32
+nn.LeakyReLU             _GGHL__fpn._Neck__cls0.0._Convolutional__activate 1 1 207 208 negative_slope=1.000000e-01 #207=(1,1024,25,25)f32 #208=(1,1024,25,25)f32
+nn.Conv2d                _GGHL__fpn._Neck__cls0.1 1 1 208 209 bias=True dilation=(1,1) groups=1 in_channels=1024 kernel_size=(1,1) out_channels=15 padding=(0,0) padding_mode=zeros stride=(1,1) @bias=(15)f32 @weight=(15,1024,1,1)f32 #208=(1,1024,25,25)f32 #209=(1,15,25,25)f32
+nn.Conv2d                convbn2d_71              1 1 179 210 bias=True dilation=(1,1) groups=1 in_channels=256 kernel_size=(3,3) out_channels=512 padding=(1,1) padding_mode=zeros stride=(1,1) @bias=(512)f32 @weight=(512,256,3,3)f32 $input=179 #179=(1,256,50,50)f32 #210=(1,512,50,50)f32
+nn.LeakyReLU             _GGHL__fpn._Neck__loc1.0._Convolutional__activate 1 1 210 211 negative_slope=1.000000e-01 #210=(1,512,50,50)f32 #211=(1,512,50,50)f32
+nn.Conv2d                _GGHL__fpn._Neck__loc1.1 1 1 211 212 bias=True dilation=(1,1) groups=1 in_channels=512 kernel_size=(1,1) out_channels=10 padding=(0,0) padding_mode=zeros stride=(1,1) @bias=(10)f32 @weight=(10,512,1,1)f32 #211=(1,512,50,50)f32 #212=(1,10,50,50)f32
+nn.Conv2d                convbn2d_72              1 1 179 213 bias=True dilation=(1,1) groups=1 in_channels=256 kernel_size=(3,3) out_channels=512 padding=(1,1) padding_mode=zeros stride=(1,1) @bias=(512)f32 @weight=(512,256,3,3)f32 $input=179 #179=(1,256,50,50)f32 #213=(1,512,50,50)f32
+nn.LeakyReLU             _GGHL__fpn._Neck__cls1.0._Convolutional__activate 1 1 213 214 negative_slope=1.000000e-01 #213=(1,512,50,50)f32 #214=(1,512,50,50)f32
+nn.Conv2d                _GGHL__fpn._Neck__cls1.1 1 1 214 215 bias=True dilation=(1,1) groups=1 in_channels=512 kernel_size=(1,1) out_channels=15 padding=(0,0) padding_mode=zeros stride=(1,1) @bias=(15)f32 @weight=(15,512,1,1)f32 #214=(1,512,50,50)f32 #215=(1,15,50,50)f32
+nn.Conv2d                convbn2d_73              1 1 203 216 bias=True dilation=(1,1) groups=1 in_channels=128 kernel_size=(3,3) out_channels=256 padding=(1,1) padding_mode=zeros stride=(1,1) @bias=(256)f32 @weight=(256,128,3,3)f32 $input=203 #203=(1,128,100,100)f32 #216=(1,256,100,100)f32
+nn.LeakyReLU             _GGHL__fpn._Neck__loc2.0._Convolutional__activate 1 1 216 217 negative_slope=1.000000e-01 #216=(1,256,100,100)f32 #217=(1,256,100,100)f32
+nn.Conv2d                _GGHL__fpn._Neck__loc2.1 1 1 217 218 bias=True dilation=(1,1) groups=1 in_channels=256 kernel_size=(1,1) out_channels=10 padding=(0,0) padding_mode=zeros stride=(1,1) @bias=(10)f32 @weight=(10,256,1,1)f32 #217=(1,256,100,100)f32 #218=(1,10,100,100)f32
+nn.Conv2d                convbn2d_74              1 1 203 219 bias=True dilation=(1,1) groups=1 in_channels=128 kernel_size=(3,3) out_channels=256 padding=(1,1) padding_mode=zeros stride=(1,1) @bias=(256)f32 @weight=(256,128,3,3)f32 $input=203 #203=(1,128,100,100)f32 #219=(1,256,100,100)f32
+nn.LeakyReLU             _GGHL__fpn._Neck__cls2.0._Convolutional__activate 1 1 219 220 negative_slope=1.000000e-01 #219=(1,256,100,100)f32 #220=(1,256,100,100)f32
+nn.Conv2d                _GGHL__fpn._Neck__cls2.1 1 1 220 221 bias=True dilation=(1,1) groups=1 in_channels=256 kernel_size=(1,1) out_channels=15 padding=(0,0) padding_mode=zeros stride=(1,1) @bias=(15)f32 @weight=(15,256,1,1)f32 #220=(1,256,100,100)f32 #221=(1,15,100,100)f32
+torch.cat                torch.cat_358            2 1 218 221 222 dim=1 #218=(1,10,100,100)f32 #221=(1,15,100,100)f32 #222=(1,25,100,100)f32
+torch.cat                torch.cat_357            2 1 212 215 223 dim=1 #212=(1,10,50,50)f32 #215=(1,15,50,50)f32 #223=(1,25,50,50)f32
+torch.cat                torch.cat_356            2 1 206 209 224 dim=1 #206=(1,10,25,25)f32 #209=(1,15,25,25)f32 #224=(1,25,25,25)f32
+torch.permute            torch.permute_389        1 1 222 225 dims=(0,2,3,1) $input=222 #222=(1,25,100,100)f32 #225=(1,100,100,25)f32
+torch.clone              torch.clone_368          1 1 225 226 $input=225 #225=(1,100,100,25)f32 #226=(1,100,100,25)f32
+Tensor.slice             slice_0                  1 1 226 227 dims=(3) ends=(4) starts=(0) steps=(1) $input=226 #226=(1,100,100,25)f32 #227=(1,100,100,4)f32
+aten::exp                pnnx_540                 1 1 227 228 #227=(1,100,100,4)f32 #228=(1,100,100,4)f32
+pnnx.Expression          pnnx_expr_1019           1 1 228 229 expr=mul(@0,8.000000e+00) #228=(1,100,100,4)f32 #229=(1,100,100,4)f32
+pnnx.Attribute           pnnx_fold_938            0 1 230 @pnnx_fold_938=(1,100,100,1)f32 #230=(1,100,100,1)f32
+pnnx.Attribute           pnnx_fold_950            0 1 231 @pnnx_fold_950=(1,100,100,1)f32 #231=(1,100,100,1)f32
+Tensor.slice             slice_10                 1 1 229 232 dims=(3) ends=(2) starts=(1) steps=(1) $input=229 #229=(1,100,100,4)f32 #232=(1,100,100,1)f32
+Tensor.slice             slice_9                  1 1 229 233 dims=(3) ends=(4) starts=(3) steps=(1) $input=229 #229=(1,100,100,4)f32 #233=(1,100,100,1)f32
+pnnx.Expression          pnnx_expr_822            2 1 232 233 234 expr=add(@0,@1) #232=(1,100,100,1)f32 #233=(1,100,100,1)f32 #234=(1,100,100,1)f32
+Tensor.slice             slice_12                 1 1 229 235 dims=(3) ends=(1) starts=(0) steps=(1) $input=229 #229=(1,100,100,4)f32 #235=(1,100,100,1)f32
+Tensor.slice             slice_11                 1 1 229 236 dims=(3) ends=(3) starts=(2) steps=(1) $input=229 #229=(1,100,100,4)f32 #236=(1,100,100,1)f32
+pnnx.Expression          pnnx_expr_788            2 1 235 236 237 expr=add(@0,@1) #235=(1,100,100,1)f32 #236=(1,100,100,1)f32 #237=(1,100,100,1)f32
+pnnx.Expression          pnnx_expr_784            4 1 230 232 230 233 238 expr=div(add(add(@0,@1),sub(@2,@3)),2) #230=(1,100,100,1)f32 #232=(1,100,100,1)f32 #230=(1,100,100,1)f32 #233=(1,100,100,1)f32 #238=(1,100,100,1)f32
+pnnx.Expression          pnnx_expr_780            4 1 231 236 231 235 239 expr=div(add(add(@0,@1),sub(@2,@3)),2) #231=(1,100,100,1)f32 #236=(1,100,100,1)f32 #231=(1,100,100,1)f32 #235=(1,100,100,1)f32 #239=(1,100,100,1)f32
+Tensor.slice             slice_13                 1 1 226 240 dims=(3) ends=(8) starts=(4) steps=(1) $input=226 #226=(1,100,100,25)f32 #240=(1,100,100,4)f32
+F.sigmoid                F.sigmoid_6              1 1 240 241 $input=240 #240=(1,100,100,4)f32 #241=(1,100,100,4)f32
+torch.clamp              torch.clamp_365          1 1 241 242 max=1 min=1.000000e-02 $input=241 #241=(1,100,100,4)f32 #242=(1,100,100,4)f32
+pnnx.Expression          pnnx_expr_775            1 1 242 243 expr=div(sub(@0,1.000000e-02),9.900000e-01) #242=(1,100,100,4)f32 #243=(1,100,100,4)f32
+Tensor.slice             slice_14                 1 1 226 244 dims=(3) ends=(9) starts=(8) steps=(1) $input=226 #226=(1,100,100,25)f32 #244=(1,100,100,1)f32
+F.hardsigmoid            F.hardsigmoid_0          1 1 244 245 $input=244 #244=(1,100,100,1)f32 #245=(1,100,100,1)f32
+Tensor.slice             slice_15                 1 1 226 246 dims=(3) ends=(-1) starts=(10) steps=(1) $input=226 #226=(1,100,100,25)f32 #246=(1,100,100,15)f32
+F.sigmoid                F.sigmoid_8              1 1 246 247 $input=246 #246=(1,100,100,15)f32 #247=(1,100,100,15)f32
+Tensor.slice             slice_16                 1 1 226 248 dims=(3) ends=(10) starts=(9) steps=(1) $input=226 #226=(1,100,100,25)f32 #248=(1,100,100,1)f32
+F.sigmoid                F.sigmoid_7              1 1 248 249 $input=248 #248=(1,100,100,1)f32 #249=(1,100,100,1)f32
+torch.cat                torch.cat_359            4 1 238 239 234 237 250 dim=-1 #238=(1,100,100,1)f32 #239=(1,100,100,1)f32 #234=(1,100,100,1)f32 #237=(1,100,100,1)f32 #250=(1,100,100,4)f32
+torch.cat                torch.cat_360            6 1 250 243 245 229 249 247 251 dim=-1 #250=(1,100,100,4)f32 #243=(1,100,100,4)f32 #245=(1,100,100,1)f32 #229=(1,100,100,4)f32 #249=(1,100,100,1)f32 #247=(1,100,100,15)f32 #251=(1,100,100,29)f32
+torch.permute            torch.permute_390        1 1 223 252 dims=(0,2,3,1) $input=223 #223=(1,25,50,50)f32 #252=(1,50,50,25)f32
+torch.clone              torch.clone_369          1 1 252 253 $input=252 #252=(1,50,50,25)f32 #253=(1,50,50,25)f32
+Tensor.slice             slice_17                 1 1 253 254 dims=(3) ends=(4) starts=(0) steps=(1) $input=253 #253=(1,50,50,25)f32 #254=(1,50,50,4)f32
+aten::exp                pnnx_1221                1 1 254 255 #254=(1,50,50,4)f32 #255=(1,50,50,4)f32
+pnnx.Expression          pnnx_expr_632            1 1 255 256 expr=mul(@0,1.600000e+01) #255=(1,50,50,4)f32 #256=(1,50,50,4)f32
+pnnx.Attribute           pnnx_fold_1147           0 1 257 @pnnx_fold_1147=(1,50,50,1)f32 #257=(1,50,50,1)f32
+pnnx.Attribute           pnnx_fold_1159           0 1 258 @pnnx_fold_1159=(1,50,50,1)f32 #258=(1,50,50,1)f32
+Tensor.slice             slice_27                 1 1 256 259 dims=(3) ends=(2) starts=(1) steps=(1) $input=256 #256=(1,50,50,4)f32 #259=(1,50,50,1)f32
+Tensor.slice             slice_26                 1 1 256 260 dims=(3) ends=(4) starts=(3) steps=(1) $input=256 #256=(1,50,50,4)f32 #260=(1,50,50,1)f32
+pnnx.Expression          pnnx_expr_435            2 1 259 260 261 expr=add(@0,@1) #259=(1,50,50,1)f32 #260=(1,50,50,1)f32 #261=(1,50,50,1)f32
+Tensor.slice             slice_29                 1 1 256 262 dims=(3) ends=(1) starts=(0) steps=(1) $input=256 #256=(1,50,50,4)f32 #262=(1,50,50,1)f32
+Tensor.slice             slice_28                 1 1 256 263 dims=(3) ends=(3) starts=(2) steps=(1) $input=256 #256=(1,50,50,4)f32 #263=(1,50,50,1)f32
+pnnx.Expression          pnnx_expr_401            2 1 262 263 264 expr=add(@0,@1) #262=(1,50,50,1)f32 #263=(1,50,50,1)f32 #264=(1,50,50,1)f32
+pnnx.Expression          pnnx_expr_397            4 1 257 259 257 260 265 expr=div(add(add(@0,@1),sub(@2,@3)),2) #257=(1,50,50,1)f32 #259=(1,50,50,1)f32 #257=(1,50,50,1)f32 #260=(1,50,50,1)f32 #265=(1,50,50,1)f32
+pnnx.Expression          pnnx_expr_393            4 1 258 263 258 262 266 expr=div(add(add(@0,@1),sub(@2,@3)),2) #258=(1,50,50,1)f32 #263=(1,50,50,1)f32 #258=(1,50,50,1)f32 #262=(1,50,50,1)f32 #266=(1,50,50,1)f32
+Tensor.slice             slice_30                 1 1 253 267 dims=(3) ends=(8) starts=(4) steps=(1) $input=253 #253=(1,50,50,25)f32 #267=(1,50,50,4)f32
+F.sigmoid                F.sigmoid_9              1 1 267 268 $input=267 #267=(1,50,50,4)f32 #268=(1,50,50,4)f32
+torch.clamp              torch.clamp_366          1 1 268 269 max=1 min=1.000000e-02 $input=268 #268=(1,50,50,4)f32 #269=(1,50,50,4)f32
+pnnx.Expression          pnnx_expr_388            1 1 269 270 expr=div(sub(@0,1.000000e-02),9.900000e-01) #269=(1,50,50,4)f32 #270=(1,50,50,4)f32
+Tensor.slice             slice_31                 1 1 253 271 dims=(3) ends=(9) starts=(8) steps=(1) $input=253 #253=(1,50,50,25)f32 #271=(1,50,50,1)f32
+F.hardsigmoid            F.hardsigmoid_1          1 1 271 272 $input=271 #271=(1,50,50,1)f32 #272=(1,50,50,1)f32
+Tensor.slice             slice_32                 1 1 253 273 dims=(3) ends=(-1) starts=(10) steps=(1) $input=253 #253=(1,50,50,25)f32 #273=(1,50,50,15)f32
+F.sigmoid                F.sigmoid_11             1 1 273 274 $input=273 #273=(1,50,50,15)f32 #274=(1,50,50,15)f32
+Tensor.slice             slice_33                 1 1 253 275 dims=(3) ends=(10) starts=(9) steps=(1) $input=253 #253=(1,50,50,25)f32 #275=(1,50,50,1)f32
+F.sigmoid                F.sigmoid_10             1 1 275 276 $input=275 #275=(1,50,50,1)f32 #276=(1,50,50,1)f32
+torch.cat                torch.cat_361            4 1 265 266 261 264 277 dim=-1 #265=(1,50,50,1)f32 #266=(1,50,50,1)f32 #261=(1,50,50,1)f32 #264=(1,50,50,1)f32 #277=(1,50,50,4)f32
+torch.cat                torch.cat_362            6 1 277 270 272 256 276 274 278 dim=-1 #277=(1,50,50,4)f32 #270=(1,50,50,4)f32 #272=(1,50,50,1)f32 #256=(1,50,50,4)f32 #276=(1,50,50,1)f32 #274=(1,50,50,15)f32 #278=(1,50,50,29)f32
+torch.permute            torch.permute_391        1 1 224 279 dims=(0,2,3,1) $input=224 #224=(1,25,25,25)f32 #279=(1,25,25,25)f32
+torch.clone              torch.clone_370          1 1 279 280 $input=279 #279=(1,25,25,25)f32 #280=(1,25,25,25)f32
+Tensor.slice             slice_34                 1 1 280 281 dims=(3) ends=(4) starts=(0) steps=(1) $input=280 #280=(1,25,25,25)f32 #281=(1,25,25,4)f32
+aten::exp                pnnx_1902                1 1 281 282 #281=(1,25,25,4)f32 #282=(1,25,25,4)f32
+pnnx.Expression          pnnx_expr_245            1 1 282 283 expr=mul(@0,3.200000e+01) #282=(1,25,25,4)f32 #283=(1,25,25,4)f32
+pnnx.Attribute           pnnx_fold_1356           0 1 284 @pnnx_fold_1356=(1,25,25,1)f32 #284=(1,25,25,1)f32
+pnnx.Attribute           pnnx_fold_1368           0 1 285 @pnnx_fold_1368=(1,25,25,1)f32 #285=(1,25,25,1)f32
+Tensor.slice             slice_44                 1 1 283 286 dims=(3) ends=(2) starts=(1) steps=(1) $input=283 #283=(1,25,25,4)f32 #286=(1,25,25,1)f32
+Tensor.slice             slice_43                 1 1 283 287 dims=(3) ends=(4) starts=(3) steps=(1) $input=283 #283=(1,25,25,4)f32 #287=(1,25,25,1)f32
+pnnx.Expression          pnnx_expr_48             2 1 286 287 288 expr=add(@0,@1) #286=(1,25,25,1)f32 #287=(1,25,25,1)f32 #288=(1,25,25,1)f32
+Tensor.slice             slice_46                 1 1 283 289 dims=(3) ends=(1) starts=(0) steps=(1) $input=283 #283=(1,25,25,4)f32 #289=(1,25,25,1)f32
+Tensor.slice             slice_45                 1 1 283 290 dims=(3) ends=(3) starts=(2) steps=(1) $input=283 #283=(1,25,25,4)f32 #290=(1,25,25,1)f32
+pnnx.Expression          pnnx_expr_14             2 1 289 290 291 expr=add(@0,@1) #289=(1,25,25,1)f32 #290=(1,25,25,1)f32 #291=(1,25,25,1)f32
+pnnx.Expression          pnnx_expr_10             4 1 284 286 284 287 292 expr=div(add(add(@0,@1),sub(@2,@3)),2) #284=(1,25,25,1)f32 #286=(1,25,25,1)f32 #284=(1,25,25,1)f32 #287=(1,25,25,1)f32 #292=(1,25,25,1)f32
+pnnx.Expression          pnnx_expr_6              4 1 285 290 285 289 293 expr=div(add(add(@0,@1),sub(@2,@3)),2) #285=(1,25,25,1)f32 #290=(1,25,25,1)f32 #285=(1,25,25,1)f32 #289=(1,25,25,1)f32 #293=(1,25,25,1)f32
+Tensor.slice             slice_47                 1 1 280 294 dims=(3) ends=(8) starts=(4) steps=(1) $input=280 #280=(1,25,25,25)f32 #294=(1,25,25,4)f32
+F.sigmoid                F.sigmoid_12             1 1 294 295 $input=294 #294=(1,25,25,4)f32 #295=(1,25,25,4)f32
+torch.clamp              torch.clamp_367          1 1 295 296 max=1 min=1.000000e-02 $input=295 #295=(1,25,25,4)f32 #296=(1,25,25,4)f32
+pnnx.Expression          pnnx_expr_1              1 1 296 297 expr=div(sub(@0,1.000000e-02),9.900000e-01) #296=(1,25,25,4)f32 #297=(1,25,25,4)f32
+Tensor.slice             slice_48                 1 1 280 298 dims=(3) ends=(9) starts=(8) steps=(1) $input=280 #280=(1,25,25,25)f32 #298=(1,25,25,1)f32
+F.hardsigmoid            F.hardsigmoid_2          1 1 298 299 $input=298 #298=(1,25,25,1)f32 #299=(1,25,25,1)f32
+Tensor.slice             slice_49                 1 1 280 300 dims=(3) ends=(-1) starts=(10) steps=(1) $input=280 #280=(1,25,25,25)f32 #300=(1,25,25,15)f32
+F.sigmoid                F.sigmoid_14             1 1 300 301 $input=300 #300=(1,25,25,15)f32 #301=(1,25,25,15)f32
+Tensor.slice             slice_50                 1 1 280 302 dims=(3) ends=(10) starts=(9) steps=(1) $input=280 #280=(1,25,25,25)f32 #302=(1,25,25,1)f32
+F.sigmoid                F.sigmoid_13             1 1 302 303 $input=302 #302=(1,25,25,1)f32 #303=(1,25,25,1)f32
+torch.cat                torch.cat_363            4 1 292 293 288 291 304 dim=-1 #292=(1,25,25,1)f32 #293=(1,25,25,1)f32 #288=(1,25,25,1)f32 #291=(1,25,25,1)f32 #304=(1,25,25,4)f32
+torch.cat                torch.cat_364            6 1 304 297 299 283 303 301 305 dim=-1 #304=(1,25,25,4)f32 #297=(1,25,25,4)f32 #299=(1,25,25,1)f32 #283=(1,25,25,4)f32 #303=(1,25,25,1)f32 #301=(1,25,25,15)f32 #305=(1,25,25,29)f32
+prim::TupleConstruct     pnnx_2397                3 1 225 252 279 306 #225=(1,100,100,25)f32 #252=(1,50,50,25)f32 #279=(1,25,25,25)f32
+prim::TupleConstruct     pnnx_2398                3 1 251 278 305 307 #251=(1,100,100,29)f32 #278=(1,50,50,29)f32 #305=(1,25,25,29)f32
+prim::TupleConstruct     pnnx_2399                2 1 306 307 308
+pnnx.Output              pnnx_output_0            1 0 308
