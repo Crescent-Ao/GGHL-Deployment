@@ -30,5 +30,5 @@ Another choice:
 ```
 Then run the demo. We will complement the input methods. You can modify the filename in the `main.cpp`. You should generate the tensorIR model which is exported by the `torch2onnx.py`
 ```
-./GGHL
+./GGHL --image_path ="your absolute image path"
 ```
