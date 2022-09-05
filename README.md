@@ -1,5 +1,5 @@
 # GGHL-Deployment
-![image](./TensorRT/cpp/QAQ858.png)
+
 初步计划实现对以下平台的推理，分别是
 - NCNN(完成）
 - openvino（无AVX512）
@@ -13,7 +13,7 @@
 - PNNX(转换已完成)
 - 推理已完成
 - 解码完成
-
+![image](./TensorRT/cpp/QAQ858.png)
 ## 更新
 我们发现有些情况中，onnx->trt转换时会出现段错误的情况，解决的方式是使用英伟达官方的
 转换工具`\trtexec`，通过分配尽可能的maxworkspace来减少这种情况的出现
