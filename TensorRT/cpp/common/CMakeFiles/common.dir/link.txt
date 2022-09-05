@@ -1,0 +1,2 @@
+/usr/bin/ar qc libcommon.a CMakeFiles/common.dir/logger.cpp.o
+/usr/bin/ranlib libcommon.a
